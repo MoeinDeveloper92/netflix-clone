@@ -12,7 +12,6 @@ const MovieVideo = async () => {
         poster={movie?.imageString}
         autoPlay
         loop
-        muted
         controls
         className="w-screen absolute top-0 left-0 h-[60vh] object-cover  -z-10 brightness-75"
       ></video>

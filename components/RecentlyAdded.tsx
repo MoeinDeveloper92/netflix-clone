@@ -1,8 +1,12 @@
 import { fetchMostRecentMovies } from '@/utils/fetchMovies';
 import React, { Fragment } from 'react';
 import MovieCard from './MovieCard';
+import { authOptions } from '@/utils/authOptions';
+import { getServerSession } from 'next-auth/next';
 const RecentlyAdded = async () => {
-  const movies = await fetchMostRecentMovies();
+  const session = await getServerSession(authOptions);
+
+  const movies = await fetchMostRecentMovies(session?.user?.email as string);
 
   return (
     <Fragment>
