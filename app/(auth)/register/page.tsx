@@ -1,3 +1,5 @@
+import GithubSignInButton from '@/components/GithubSignInButton';
+import GoogleSignInButton from '@/components/GoogleSignInButton';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import github from '@/public/github.svg';
@@ -36,23 +38,8 @@ const page = (props: Props) => {
         </Link>
       </div>
       <div className="flex w-full justify-center items-center gap-3 mt-5">
-        <Button
-          asChild
-          variant={'outline'}
-          className="hover:bg-white cursor-pointer hover:bg-white/35"
-          size={'icon'}
-        >
-          <Image
-            className="bg-white "
-            src={github}
-            width={10}
-            height={10}
-            alt="Github ICON"
-          />
-        </Button>
-        <Button variant={'outline'} size={'icon'}>
-          <Image src={google} alt="Google Tag" className="w-6 h-6" />
-        </Button>
+        <GithubSignInButton />
+        <GoogleSignInButton />
       </div>
     </div>
   );

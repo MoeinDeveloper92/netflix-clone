@@ -5,6 +5,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import { signIn } from 'next-auth/react';
+import GithubSignInButton from '@/components/GithubSignInButton';
+import GoogleSignInButton from '@/components/GoogleSignInButton';
 type Props = {};
 
 function page({}: Props) {
@@ -35,23 +38,8 @@ function page({}: Props) {
         </Link>
       </div>
       <div className="flex w-full justify-center items-center gap-3 mt-5">
-        <Button
-          asChild
-          variant={'outline'}
-          className="hover:bg-white cursor-pointer hover:bg-white/35"
-          size={'icon'}
-        >
-          <Image
-            className="bg-white "
-            src={github}
-            width={10}
-            height={10}
-            alt="Github ICON"
-          />
-        </Button>
-        <Button variant={'outline'} size={'icon'}>
-          <Image src={google} alt="Google Tag" className="w-6 h-6" />
-        </Button>
+        <GithubSignInButton />
+        <GoogleSignInButton />
       </div>
     </div>
   );
